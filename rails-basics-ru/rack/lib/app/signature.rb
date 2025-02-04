@@ -8,7 +8,6 @@ class Signature
   end
 
   def call(env)
-    puts "[Signature] Adding signature for #{env['PATH_INFO']}"
     status, headers, body = @app.call(env)
 
     if status == 200
