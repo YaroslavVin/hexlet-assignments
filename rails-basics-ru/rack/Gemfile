@@ -3,11 +3,8 @@
 source 'https://rubygems.org'
 
 gem 'rack'
-
 gem 'logger'
-
 gem 'rack-heartbeat'
-
 gem 'byebug'
 gem 'minitest-power_assert'
 gem 'rack-minitest'
@@ -15,6 +12,5 @@ gem 'rack-unreloader'
 gem 'rackup'
 gem 'thin'
 gem 'webrick'
-
 gem 'puma'
 gem 'sinatra'
