@@ -35,3 +35,6 @@ Metrics/AbcSize:
 
 Style/YodaCondition:
   Enabled: false
+
+Bundler/OrderedGems:
+  Enabled: true
