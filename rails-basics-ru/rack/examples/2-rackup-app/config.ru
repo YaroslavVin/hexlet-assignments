@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class MyApp
-  def call(env)
-    [200, {'Content-Type' => 'text/html'}, ["Hello"]]
+  def call(_env)
+    [200, { 'Content-Type' => 'text/html' }, ['Hello']]
   end
 end
 

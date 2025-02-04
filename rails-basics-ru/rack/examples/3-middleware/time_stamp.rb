@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class TimeStamp
   def initialize(app)
     @app = app
@@ -13,7 +15,7 @@ class TimeStamp
     return prev_response if status != 200
 
     # Получаем текущее время в формате строки
-    current_time = Time.now.strftime("%Y-%m-%d %H:%M:%S")
+    current_time = Time.now.strftime('%Y-%m-%d %H:%M:%S')
 
     # Добавляем текущее время к предыдущему телу ответа
     next_body = prev_body.push('</br>', "Текущее время: #{current_time}")
