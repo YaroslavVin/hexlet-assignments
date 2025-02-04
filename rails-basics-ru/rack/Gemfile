@@ -8,13 +8,13 @@ gem 'logger'
 
 gem 'rack-heartbeat'
 
+gem 'byebug'
 gem 'minitest-power_assert'
 gem 'rack-minitest'
 gem 'rack-unreloader'
 gem 'rackup'
 gem 'thin'
 gem 'webrick'
-gem 'byebug'
 
 gem 'puma'
 gem 'sinatra'

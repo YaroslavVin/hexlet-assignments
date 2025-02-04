@@ -11,6 +11,7 @@ class AppTest < Minitest::Test
 
   def test_root
     get '/'
+
     assert { last_response.ok? }
     assert_match(/Hello, World!/, last_response.body)
     assert_match(/dffd6021bb2bd5b0af676290809ec3a53191dd81c7f70a4b28688a362182986f/, last_response.body)

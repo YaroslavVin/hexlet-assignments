@@ -10,8 +10,8 @@ module App
   def self.init
     Rack::Builder.new do
       use AdminPolicy
-      use Signature
       run Router.new
+      use Signature
     end
   end
 end

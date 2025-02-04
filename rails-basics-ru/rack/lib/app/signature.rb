@@ -11,8 +11,10 @@ class Signature
     puts "[Signature] Adding signature for #{env['PATH_INFO']}"
     status, headers, body = @app.call(env)
 
-    body << Digest::SHA256.hexdigest('asd')
-
+    if status == 200
+      hash_body = Digest::SHA256.hexdigest(body.first)
+      body << hash_body
+    end
     [status, headers, body]
   end
 end

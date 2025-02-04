@@ -9,7 +9,7 @@ class AdminPolicy
     puts "[AdminPolicy] #{env}"
     request = Rack::Request.new(env)
 
-    return [403, { 'Content-Type' => 'text/plain' }, ['Forbidden']] if request.path == '/admin'
+    return [403, { 'Content-Type' => 'text/plain' }, ['Forbidden']] if request.path.include?('/admin')
 
     puts "[AdminPolicy] not value for value #{env['PATH_INFO']}"
     @app.call(env)

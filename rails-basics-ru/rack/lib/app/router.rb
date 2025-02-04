@@ -3,18 +3,21 @@
 require 'rack'
 require 'thin'
 require 'json'
+require 'digest'
 
 class Router
   def call(env)
     request = Rack::Request.new(env)
 
+    pp "[Router] request: #{Digest::SHA256.hexdigest('Hello, World!')}"
+
     case request.path
     when '/'
-      [200, { 'Content-Type' => 'text/plain' }, ['Welcome to the app!']]
+      [200, {}, ['Hello, World!']]
     when '/about'
-      [200, { 'Content-Type' => 'text/plain' }, ['About page']]
+      [200, {}, ['About page']]
     else
-      [404, { 'Content-Type' => 'text/plain' }, ['Not Found']]
+      [404, {}, ['404 Not Found']]
     end
   end
 end
