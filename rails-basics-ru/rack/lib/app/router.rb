@@ -4,7 +4,6 @@ require 'rack'
 require 'thin'
 require 'json'
 
-
 class Router
   def call(env)
     request = Rack::Request.new(env)
@@ -19,4 +18,3 @@ class Router
     end
   end
 end
-

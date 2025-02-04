@@ -30,4 +30,4 @@ class App
 end
 
 use MyMiddleware
-run App.new
+run Config.new

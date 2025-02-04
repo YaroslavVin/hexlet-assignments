@@ -1,12 +1,17 @@
 # frozen_string_literal: true
 
 class AdminPolicy
-  def call(env)
-    puts "[AdminPolicy] Checking admin access for #{env['PATH_INFO']}"
-    request = Rack::Request.new(env)
-    puts "[AdminPolicy] it is the path #{request.path}"
+  def initialize(app)
+    @app = app
+  end
 
-    [403, 'Forbidden'] if request.path == '/admin'
+  def call(env)
+    puts "[AdminPolicy] #{env}"
+    request = Rack::Request.new(env)
+
+    return [403, { 'Content-Type' => 'text/plain' }, ['Forbidden']] if request.path == '/admin'
+
     puts "[AdminPolicy] not value for value #{env['PATH_INFO']}"
+    @app.call(env)
   end
 end

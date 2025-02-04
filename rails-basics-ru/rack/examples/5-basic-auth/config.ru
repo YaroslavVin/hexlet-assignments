@@ -10,7 +10,7 @@ class App
 end
 
 
-run App.new
+run Config.new
 
 # rackup
 # curl -u admin:password -i http://localhost:9292

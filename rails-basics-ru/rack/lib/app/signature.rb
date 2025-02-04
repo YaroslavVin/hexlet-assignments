@@ -3,16 +3,16 @@
 require 'digest'
 
 class Signature
+  def initialize(app)
+    @app = app
+  end
+
   def call(env)
     puts "[Signature] Adding signature for #{env['PATH_INFO']}"
+    status, headers, body = @app.call(env)
 
-    request = Rack::Request.new(env)
+    body << Digest::SHA256.hexdigest('asd')
 
-    result_hash = Digest::SHA256.digest(request[1])
-
-    return [request[0], headers[1], body[2]] if status != 200
-
-    body.push(result_hash)
     [status, headers, body]
   end
 end

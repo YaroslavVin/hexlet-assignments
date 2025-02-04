@@ -29,7 +29,7 @@ class App
 end
 
 use MyMiddleware
-run App.new
+run Config.new
 
 # rackup
 # curl -x POST localhost:9292/users?sort=desc -d "{\"login\":\"admin\",\"password\":\"password\"}"
