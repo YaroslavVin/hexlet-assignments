@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
 require 'rack'
-require 'rack/builder'
 require_relative 'app/admin_policy'
+require_relative 'app/execution_timer'
 require_relative 'app/signature'
 require_relative 'app/router'
 
 module App
   def self.init
-    Rack::Builder.new do
-      use AdminPolicy
-      run Router.new
-      use Signature
+    Rack::Builder.new do |builder|
+      builder.use AdminPolicy
+      builder.run Router.new
+      builder.use Signature
     end
   end
 end
