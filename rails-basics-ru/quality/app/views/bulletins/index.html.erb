@@ -1,0 +1,4 @@
+<h1>Bulletins</h1>
+<% @bulletins.each do |bulletin| %>
+<li><%= link_to bulletin.title, bulletin_path(bulletin) if bulletin.published?  %></li>
+<% end %>
