@@ -35,6 +35,7 @@ class HexletCheckTest < ActionDispatch::IntegrationTest
   test 'should create task' do
     post tasks_url, params: { task: @attrs }
 
+    sleep 1
     task = Task.find_by! name: @attrs[:name]
 
     assert_redirected_to task_url(task)
