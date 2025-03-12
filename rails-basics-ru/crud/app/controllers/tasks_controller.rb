@@ -16,11 +16,11 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(task_params)
     if @task.save
-      flash[:notice] = 'Task successfully created'
       redirect_to task_path(@task)
+      flash[:notice] = 'Task successfully created'
     else
-      flash.now[:failure] = 'Task cannot be created.'
       render :new
+      flash.now[:failure] = 'Task cannot be created.'
     end
   end
 
@@ -32,11 +32,11 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
 
     if @task.update(task_params)
-      flash[:notice] = 'Task successfully updated'
       redirect_to task_path(@task)
+      flash[:notice] = 'Task successfully updated'
     else
-      flash.now[:failure] = 'Task cannot be updated.'
       render :edit
+      flash.now[:failure] = 'Task cannot be updated.'
     end
   end
 
