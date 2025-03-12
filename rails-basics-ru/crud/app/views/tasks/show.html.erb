@@ -1,0 +1,4 @@
+<h1> <%= @task.name %></h1>
+  <h2> Автор статьи: <%= @task.creator %></h2>
+  <p><%= @task.description %></p>
+<%= link_to 'Destroy', task_path(@task), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>

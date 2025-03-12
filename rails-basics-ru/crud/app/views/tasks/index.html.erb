@@ -1,0 +1,7 @@
+<h1>Здесь выводим список всех статей</h1>
+
+<% @tasks.each do |task| %>
+  <li><%= link_to task.name, task_path(task) %></li>
+  <li><%= link_to 'edit', edit_task_path(task) %></li>
+  <li><%= link_to 'delete', edit_task_path(task) %></li>
+<% end %>

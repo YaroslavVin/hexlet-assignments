@@ -1,0 +1,12 @@
+<%= form_with(model: @task) do |form|  %>
+  <div>
+    <%= form.label :name, "Введите имя автора:" %>
+    <%= form.text_field :name %>
+
+    <%= form.label :description, "Введите описание статьи:" %>
+    <%= form.text_field :description %>
+  </div>
+  <div>
+    <%= form.submit "Отправить" %>
+  </div>
+<% end %>
