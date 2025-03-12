@@ -35,10 +35,10 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
 
   test 'should patch update' do
     patch task_url(@task), params: { task: @attrs }
-
     assert_redirected_to task_url(@task)
 
     @task.reload
+
     assert { @task.name == @attrs[:name] }
   end
 
