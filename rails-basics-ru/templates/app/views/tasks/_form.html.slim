@@ -1,0 +1,23 @@
+= form_with model: @task do |f|
+  .form-group
+    = f.label :name, "Название"
+    = f.text_field :name, class: "form-control"
+
+  .form-group
+    = f.label :description, "Описание"
+    = f.text_area :description, class: "form-control"
+
+  .form-group
+    = f.label :creator, "Имя автора"
+    = f.text_area :creator, class: "form-control"
+
+  .form-group
+    = f.label :performer, "Исполнитель задачи"
+    = f.text_area :performer, class: "form-control"
+
+  .form-group
+    = f.label :completed, "Завершено"
+    = f.check_box :completed
+
+  .actions
+    = f.submit "Сохранить изменения", class: "btn btn-primary"
