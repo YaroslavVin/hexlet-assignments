@@ -1,0 +1,17 @@
+= content_for :title do
+  = 'Tasks'
+
+table.table.table-striped.table-hover.mb-5
+  thead
+    tr
+      th{ scope = 'col' } #
+      th{ scope = 'col' } Name
+      th
+
+  tbody
+    - @tasks.each do |task|
+      li
+        = task.name if task.name.present?
+        = task.description if task.description.present?
+
+= link_to 'New Status', new_status_path, class: 'btn btn-primary'
